@@ -36,5 +36,10 @@ public class UserController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable UUID id){
+        userRepository.deleteById(id);
+    }
+
 
 }
